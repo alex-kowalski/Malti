@@ -155,7 +155,7 @@ $form->add_element( 'select', 'map_all_control[wpgmp_list_grid]', array(
 ));
 
 $default_place_holder = '
-<div class="wpgmp_locations">
+<div class="wpgmp_locations" data-marker="{marker_id}">
 <div class="wpgmp_locations_head">
 <div class="wpgmp_location_title">
 <a href="" class="place_title" data-zoom="{marker_zoom}" data-marker="{marker_id}">{marker_title}</a>

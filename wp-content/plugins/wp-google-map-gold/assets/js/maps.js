@@ -306,6 +306,7 @@
                 });
 
                 $(map_obj.container).find('.wpgmp_locations').responsiveEqualHeightGrid();
+                $(map_obj.container).find('.wpgmp_locations').hide();
             }
 
             $('.wpgmp-shape-delete').click(function() {
@@ -618,6 +619,12 @@
                 map_obj.load_json(map_obj.map_data.geojson);
             }
 
+			$("body").on("click", ".wpgmp_marker_info_data", function() {
+				marker_selected = $(this).data("marker");
+				$(".wpgmp_locations").hide();
+				$(".wpgmp_locations[data-marker='"+marker_selected+"']").show();
+            });
+            
             $("body").on("click", ".wpgmp_marker_link", function() {
                 map_obj.open_infowindow($(this).data("marker"));
                 $('html, body').animate({
@@ -1846,6 +1853,7 @@
             $(listing_container).find(".wpgmp_categories").html(content);
 
             $(listing_container).find('.wpgmp_locations').responsiveEqualHeightGrid();
+            $(listing_container).find('.wpgmp_locations').hide();
 
 
             return false;
